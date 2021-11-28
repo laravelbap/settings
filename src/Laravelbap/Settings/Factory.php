@@ -1,10 +1,10 @@
-<?php namespace Krucas\Settings;
+<?php namespace Laravelbap\Settings;
 
 use Closure;
 use Illuminate\Support\Arr;
 use InvalidArgumentException;
-use Krucas\Settings\Contracts\Factory as FactoryContract;
-use Krucas\Settings\Repositories\DatabaseRepository;
+use Laravelbap\Settings\Contracts\Factory as FactoryContract;
+use Laravelbap\Settings\Repositories\DatabaseRepository;
 
 class Factory implements FactoryContract
 {
@@ -67,7 +67,7 @@ class Factory implements FactoryContract
      * Attempt to get the repository from the local cache.
      *
      * @param string $name
-     * @return \Krucas\Settings\Contracts\Repository
+     * @return \Laravelbap\Settings\Contracts\Repository
      */
     protected function get($name)
     {
@@ -78,7 +78,7 @@ class Factory implements FactoryContract
      * Resolve the given repository.
      *
      * @param string $name
-     * @return \Krucas\Settings\Contracts\Repository
+     * @return \Laravelbap\Settings\Contracts\Repository
      */
     protected function resolve($name)
     {
@@ -110,7 +110,7 @@ class Factory implements FactoryContract
      * Create database repository.
      *
      * @param array $config
-     * @return \Krucas\Settings\Repositories\DatabaseRepository
+     * @return \Laravelbap\Settings\Repositories\DatabaseRepository
      */
     protected function createDatabaseDriver(array $config)
     {

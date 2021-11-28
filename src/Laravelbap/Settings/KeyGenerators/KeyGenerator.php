@@ -1,22 +1,22 @@
 <?php
 
-namespace Krucas\Settings\KeyGenerators;
+namespace Laravelbap\Settings\KeyGenerators;
 
-use Krucas\Settings\Context;
-use Krucas\Settings\Contracts\ContextSerializer;
-use Krucas\Settings\Contracts\KeyGenerator as KeyGeneratorContract;
+use Laravelbap\Settings\Context;
+use Laravelbap\Settings\Contracts\ContextSerializer;
+use Laravelbap\Settings\Contracts\KeyGenerator as KeyGeneratorContract;
 
 class KeyGenerator implements KeyGeneratorContract
 {
     /**
      * Context serializer.
      *
-     * @var \Krucas\Settings\Contracts\ContextSerializer
+     * @var \Laravelbap\Settings\Contracts\ContextSerializer
      */
     protected $serializer;
 
     /**
-     * @param \Krucas\Settings\Contracts\ContextSerializer $serializer
+     * @param \Laravelbap\Settings\Contracts\ContextSerializer $serializer
      */
     public function __construct(ContextSerializer $serializer)
     {
@@ -27,7 +27,7 @@ class KeyGenerator implements KeyGeneratorContract
      * Generate storage key for a given key and context.
      *
      * @param string $key
-     * @param \Krucas\Settings\Context $context
+     * @param \Laravelbap\Settings\Context $context
      * @return string
      */
     public function generate($key, Context $context = null)

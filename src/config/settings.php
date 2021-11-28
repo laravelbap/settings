@@ -74,7 +74,7 @@ return [
     | Key generator is used to generate keys based on setting key and context.
     |
     */
-    'key_generator' => \Krucas\Settings\KeyGenerators\KeyGenerator::class,
+    'key_generator' => \Laravelbap\Settings\KeyGenerators\KeyGenerator::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -82,10 +82,10 @@ return [
     |--------------------------------------------------------------------------
     |
     | Context serializer serializes context.
-    | It is used with "Krucas\Settings\KeyGenerators\KeyGenerator" class.
+    | It is used with "Laravelbap\Settings\KeyGenerators\KeyGenerator" class.
     |
     */
-    'context_serializer' => \Krucas\Settings\ContextSerializers\ContextSerializer::class,
+    'context_serializer' => \Laravelbap\Settings\ContextSerializers\ContextSerializer::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -95,7 +95,7 @@ return [
     | Value serializer serializes / unserializes given value.
     |
     */
-    'value_serializer' => \Krucas\Settings\ValueSerializers\ValueSerializer::class,
+    'value_serializer' => \Laravelbap\Settings\ValueSerializers\ValueSerializer::class,
 
     /*
     |--------------------------------------------------------------------------

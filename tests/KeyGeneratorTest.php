@@ -11,18 +11,18 @@ class KeyGeneratorTest extends TestCase
 
     public function testGenerateCallsSerializer()
     {
-        $context = new \Krucas\Settings\Context();
+        $context = new \Laravelbap\Settings\Context();
 
         $serializer = $this->getContextSerializerMock();
         $serializer->shouldReceive('serialize')->with($context)->andReturn('serialized');
 
-        $generator = new \Krucas\Settings\KeyGenerators\KeyGenerator($serializer);
+        $generator = new \Laravelbap\Settings\KeyGenerators\KeyGenerator($serializer);
 
         $this->assertEquals(md5('keyserialized'), $generator->generate('key', $context));
     }
 
     protected function getContextSerializerMock()
     {
-        return m::mock('Krucas\Settings\Contracts\ContextSerializer');
+        return m::mock('Laravelbap\Settings\Contracts\ContextSerializer');
     }
 }

@@ -1,15 +1,15 @@
 <?php
 
-namespace Krucas\Settings\Contracts;
+namespace Laravelbap\Settings\Contracts;
 
-use Krucas\Settings\Context;
+use Laravelbap\Settings\Context;
 
 interface ContextSerializer
 {
     /**
      * Serialize context into a string representation.
      *
-     * @param \Krucas\Settings\Context $context
+     * @param \Laravelbap\Settings\Context $context
      * @return string
      */
     public function serialize(Context $context = null);

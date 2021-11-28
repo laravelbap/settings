@@ -16,7 +16,7 @@
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./src/Krucas/</directory>
+            <directory suffix=".php">./src/Laravelbap/</directory>
         </whitelist>
     </filter>
 </phpunit>

@@ -12,17 +12,17 @@ class ContextSerializerTest extends TestCase
 
     public function testSetContextArgument()
     {
-        $context = new \Krucas\Settings\Context();
+        $context = new \Laravelbap\Settings\Context();
         $context->set('a', 'a');
 
-        $serializer = new \Krucas\Settings\ContextSerializers\ContextSerializer();
+        $serializer = new \Laravelbap\Settings\ContextSerializers\ContextSerializer();
 
         $this->assertEquals(serialize($context), $serializer->serialize($context));
     }
 
     public function testSerializeNull()
     {
-        $serializer = new \Krucas\Settings\ContextSerializers\ContextSerializer();
+        $serializer = new \Laravelbap\Settings\ContextSerializers\ContextSerializer();
 
         $this->assertEquals(serialize(null), $serializer->serialize(null));
     }

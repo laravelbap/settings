@@ -19,7 +19,7 @@ class SettingsTest extends TestCase
 
         $valueSerializer = $this->getValueSerializerMock();
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
 
         $this->assertTrue($settings->has('key'));
         $this->assertFalse($settings->has('key'));
@@ -27,7 +27,7 @@ class SettingsTest extends TestCase
 
     public function testHasFiresEvents()
     {
-        $context = new \Krucas\Settings\Context();
+        $context = new \Laravelbap\Settings\Context();
 
         $g = $this->getKeyGeneratorMock();
         $g->shouldReceive('generate')->with('key', $context)->andReturn('key_g');
@@ -41,7 +41,7 @@ class SettingsTest extends TestCase
 
         $valueSerializer = $this->getValueSerializerMock();
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
         $settings->enableEvents();
         $settings->setDispatcher($dispatcher);
 
@@ -62,7 +62,7 @@ class SettingsTest extends TestCase
 
         $valueSerializer = $this->getValueSerializerMock();
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
         $settings->disableEvents();
         $settings->setDispatcher($dispatcher);
 
@@ -80,7 +80,7 @@ class SettingsTest extends TestCase
         $valueSerializer = $this->getValueSerializerMock();
         $valueSerializer->shouldReceive('unserialize')->once()->with('serialized')->andReturn('value');
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
 
         $this->assertEquals('value', $settings->get('key'));
     }
@@ -95,7 +95,7 @@ class SettingsTest extends TestCase
 
         $valueSerializer = $this->getValueSerializerMock();
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
 
         $this->assertEquals('default', $settings->get('key', 'default'));
     }
@@ -114,7 +114,7 @@ class SettingsTest extends TestCase
         $valueSerializer = $this->getValueSerializerMock();
         $valueSerializer->shouldReceive('unserialize')->with('cached')->andReturn('unserialized');
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
         $settings->enableCache();
         $settings->setCache($cache);
 
@@ -135,7 +135,7 @@ class SettingsTest extends TestCase
         $valueSerializer = $this->getValueSerializerMock();
         $valueSerializer->shouldReceive('unserialize')->with('serialized')->andReturn('value');
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
         $settings->disableCache();
         $settings->setCache($cache);
 
@@ -156,7 +156,7 @@ class SettingsTest extends TestCase
         $valueSerializer = $this->getValueSerializerMock();
         $valueSerializer->shouldReceive('unserialize')->with('serialized')->andReturn('value');
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
         $settings->enableEncryption();
         $settings->setEncrypter($encrypter);
 
@@ -177,7 +177,7 @@ class SettingsTest extends TestCase
         $valueSerializer = $this->getValueSerializerMock();
         $valueSerializer->shouldReceive('unserialize')->with('serialized')->andReturn('value');
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
         $settings->disableEncryption();
         $settings->setEncrypter($encrypter);
 
@@ -186,7 +186,7 @@ class SettingsTest extends TestCase
 
     public function testGetFiresEvents()
     {
-        $context = new \Krucas\Settings\Context();
+        $context = new \Laravelbap\Settings\Context();
 
         $g = $this->getKeyGeneratorMock();
         $g->shouldReceive('generate')->with('key', $context)->andReturn('key_g');
@@ -201,7 +201,7 @@ class SettingsTest extends TestCase
         $valueSerializer = $this->getValueSerializerMock();
         $valueSerializer->shouldReceive('unserialize')->with('serialized')->andReturn('value');
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
         $settings->enableEvents();
         $settings->setDispatcher($dispatcher);
 
@@ -222,7 +222,7 @@ class SettingsTest extends TestCase
         $valueSerializer = $this->getValueSerializerMock();
         $valueSerializer->shouldReceive('unserialize')->with('serialized')->andReturn('value');
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
         $settings->disableEvents();
         $settings->setDispatcher($dispatcher);
 
@@ -240,7 +240,7 @@ class SettingsTest extends TestCase
         $valueSerializer = $this->getValueSerializerMock();
         $valueSerializer->shouldReceive('serialize')->with('value')->andReturn('serialized');
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
 
         $settings->set('key', 'value');
     }
@@ -259,7 +259,7 @@ class SettingsTest extends TestCase
         $valueSerializer = $this->getValueSerializerMock();
         $valueSerializer->shouldReceive('serialize')->with('value')->andReturn('serialized');
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
         $settings->enableEncryption();
         $settings->setEncrypter($encrypter);
 
@@ -280,7 +280,7 @@ class SettingsTest extends TestCase
         $valueSerializer = $this->getValueSerializerMock();
         $valueSerializer->shouldReceive('serialize')->with('value')->andReturn('serialized');
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
         $settings->disableEncryption();
         $settings->setEncrypter($encrypter);
 
@@ -301,7 +301,7 @@ class SettingsTest extends TestCase
         $valueSerializer = $this->getValueSerializerMock();
         $valueSerializer->shouldReceive('serialize')->with('value')->andReturn('serialized');
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
         $settings->enableCache();
         $settings->setCache($cache);
 
@@ -322,7 +322,7 @@ class SettingsTest extends TestCase
         $valueSerializer = $this->getValueSerializerMock();
         $valueSerializer->shouldReceive('serialize')->with('value')->andReturn('serialized');
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
         $settings->disableCache();
         $settings->setCache($cache);
 
@@ -331,7 +331,7 @@ class SettingsTest extends TestCase
 
     public function testSetFiresEvents()
     {
-        $context = new \Krucas\Settings\Context();
+        $context = new \Laravelbap\Settings\Context();
 
         $g = $this->getKeyGeneratorMock();
         $g->shouldReceive('generate')->with('key', $context)->andReturn('key_g');
@@ -346,7 +346,7 @@ class SettingsTest extends TestCase
         $valueSerializer = $this->getValueSerializerMock();
         $valueSerializer->shouldReceive('serialize')->with('value')->andReturn('serialized');
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
         $settings->enableEvents();
         $settings->setDispatcher($dispatcher);
 
@@ -367,7 +367,7 @@ class SettingsTest extends TestCase
         $valueSerializer = $this->getValueSerializerMock();
         $valueSerializer->shouldReceive('serialize')->with('value')->andReturn('serialized');
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
         $settings->disableEvents();
         $settings->setDispatcher($dispatcher);
 
@@ -384,7 +384,7 @@ class SettingsTest extends TestCase
 
         $valueSerializer = $this->getValueSerializerMock();
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
 
         $settings->forget('key');
     }
@@ -402,7 +402,7 @@ class SettingsTest extends TestCase
 
         $valueSerializer = $this->getValueSerializerMock();
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
         $settings->enableCache();
         $settings->setCache($cache);
 
@@ -422,7 +422,7 @@ class SettingsTest extends TestCase
 
         $valueSerializer = $this->getValueSerializerMock();
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
         $settings->disableCache();
         $settings->setCache($cache);
 
@@ -431,7 +431,7 @@ class SettingsTest extends TestCase
 
     public function testForgetFiresEvents()
     {
-        $context = new \Krucas\Settings\Context();
+        $context = new \Laravelbap\Settings\Context();
 
         $g = $this->getKeyGeneratorMock();
         $g->shouldReceive('generate')->with('key', $context)->andReturn('key_g');
@@ -445,7 +445,7 @@ class SettingsTest extends TestCase
 
         $valueSerializer = $this->getValueSerializerMock();
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
         $settings->enableEvents();
         $settings->setDispatcher($dispatcher);
 
@@ -465,7 +465,7 @@ class SettingsTest extends TestCase
 
         $valueSerializer = $this->getValueSerializerMock();
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
         $settings->disableEvents();
         $settings->setDispatcher($dispatcher);
 
@@ -474,9 +474,9 @@ class SettingsTest extends TestCase
 
     public function testSetSameKeysForDifferentContexts()
     {
-        $context1 = new \Krucas\Settings\Context();
+        $context1 = new \Laravelbap\Settings\Context();
 
-        $context2 = new \Krucas\Settings\Context();
+        $context2 = new \Laravelbap\Settings\Context();
 
         $g = $this->getKeyGeneratorMock();
         $g->shouldReceive('generate')->with('key', $context1)->andReturn('key_1');
@@ -496,7 +496,7 @@ class SettingsTest extends TestCase
         $valueSerializer->shouldReceive('serialize')->with('v2')->andReturn('serialized2');
         $valueSerializer->shouldReceive('unserialize')->with('serialized2')->andReturn('v2');
 
-        $settings = new \Krucas\Settings\Settings($mock, $g, $valueSerializer);
+        $settings = new \Laravelbap\Settings\Settings($mock, $g, $valueSerializer);
 
         $settings->context($context1)->set('key', 'v1');
         $settings->context($context2)->set('key', 'v2');
@@ -508,7 +508,7 @@ class SettingsTest extends TestCase
 
     protected function getRepositoryMock()
     {
-        return m::mock('Krucas\Settings\Contracts\Repository');
+        return m::mock('Laravelbap\Settings\Contracts\Repository');
     }
 
     protected function getDispatcherMock()
@@ -528,11 +528,11 @@ class SettingsTest extends TestCase
 
     protected function getKeyGeneratorMock()
     {
-        return m::mock('Krucas\Settings\Contracts\KeyGenerator');
+        return m::mock('Laravelbap\Settings\Contracts\KeyGenerator');
     }
 
     protected function getValueSerializerMock()
     {
-        return m::mock('Krucas\Settings\Contracts\ValueSerializer');
+        return m::mock('Laravelbap\Settings\Contracts\ValueSerializer');
     }
 }

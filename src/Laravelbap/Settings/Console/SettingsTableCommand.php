@@ -1,4 +1,4 @@
-<?php namespace Krucas\Settings\Console;
+<?php namespace Laravelbap\Settings\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Composer;

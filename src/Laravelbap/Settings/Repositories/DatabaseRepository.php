@@ -1,8 +1,8 @@
-<?php namespace Krucas\Settings\Repositories;
+<?php namespace Laravelbap\Settings\Repositories;
 
 use Exception;
 use Illuminate\Database\Connection;
-use Krucas\Settings\Contracts\Repository;
+use Laravelbap\Settings\Contracts\Repository;
 
 class DatabaseRepository implements Repository
 {

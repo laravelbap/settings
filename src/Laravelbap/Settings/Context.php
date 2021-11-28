@@ -1,6 +1,6 @@
 <?php
 
-namespace Krucas\Settings;
+namespace Laravelbap\Settings;
 
 class Context implements \Countable
 {

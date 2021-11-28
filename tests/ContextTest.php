@@ -12,7 +12,7 @@ class ContextTest extends TestCase
 
     public function testConstructorSetsValues()
     {
-        $context = new \Krucas\Settings\Context(['test' => 'value', 'a' => 'b']);
+        $context = new \Laravelbap\Settings\Context(['test' => 'value', 'a' => 'b']);
 
         $this->assertCount(2, $context);
         $this->assertEquals('value', $context->get('test'));
@@ -21,7 +21,7 @@ class ContextTest extends TestCase
 
     public function testSetContextArgument()
     {
-        $context = new \Krucas\Settings\Context();
+        $context = new \Laravelbap\Settings\Context();
 
         $this->assertCount(0, $context);
         $this->assertFalse($context->has('test'));
@@ -42,7 +42,7 @@ class ContextTest extends TestCase
     public function testGetUndefinedContextArgument()
     {
         $this->expectException(\OutOfBoundsException::class);
-        $context = new \Krucas\Settings\Context();
+        $context = new \Laravelbap\Settings\Context();
         $context->get('test');
     }
 }

@@ -21,7 +21,7 @@ if (!function_exists('settings')) {
 
         if (is_array($key)) {
             foreach ($key as $k => $v) {
-                if ($default instanceof \Krucas\Settings\Context) {
+                if ($default instanceof \Laravelbap\Settings\Context) {
                     $settings->context($default);
                 }
                 $settings->set($k, $v);
@@ -29,7 +29,7 @@ if (!function_exists('settings')) {
             return;
         }
 
-        if ($context instanceof \Krucas\Settings\Context) {
+        if ($context instanceof \Laravelbap\Settings\Context) {
             $settings->context($context);
         }
 

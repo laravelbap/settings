@@ -11,7 +11,7 @@ class ValueSerializerTest extends TestCase
 
     public function testSerializeMethod()
     {
-        $serializer = new \Krucas\Settings\ValueSerializers\ValueSerializer();
+        $serializer = new \Laravelbap\Settings\ValueSerializers\ValueSerializer();
 
         $object = new stdClass();
         $object->a = 'b';
@@ -26,7 +26,7 @@ class ValueSerializerTest extends TestCase
 
     public function testUnserializeMethod()
     {
-        $serializer = new \Krucas\Settings\ValueSerializers\ValueSerializer();
+        $serializer = new \Laravelbap\Settings\ValueSerializers\ValueSerializer();
 
         $object = new stdClass();
         $object->a = 'b';

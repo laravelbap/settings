@@ -1,16 +1,16 @@
 <?php
 
-namespace Krucas\Settings\ContextSerializers;
+namespace Laravelbap\Settings\ContextSerializers;
 
-use Krucas\Settings\Context;
-use Krucas\Settings\Contracts\ContextSerializer as ContextSerializerContract;
+use Laravelbap\Settings\Context;
+use Laravelbap\Settings\Contracts\ContextSerializer as ContextSerializerContract;
 
 class ContextSerializer implements ContextSerializerContract
 {
     /**
      * Serialize context into a string representation.
      *
-     * @param \Krucas\Settings\Context $context
+     * @param \Laravelbap\Settings\Context $context
      * @return string
      */
     public function serialize(Context $context = null)

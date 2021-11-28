@@ -1,8 +1,8 @@
 <?php
 
-namespace Krucas\Settings\ValueSerializers;
+namespace Laravelbap\Settings\ValueSerializers;
 
-use Krucas\Settings\Contracts\ValueSerializer as ValueSerializerContract;
+use Laravelbap\Settings\Contracts\ValueSerializer as ValueSerializerContract;
 
 class ValueSerializer implements ValueSerializerContract
 {

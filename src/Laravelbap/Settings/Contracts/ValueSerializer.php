@@ -1,6 +1,6 @@
 <?php
 
-namespace Krucas\Settings\Contracts;
+namespace Laravelbap\Settings\Contracts;
 
 interface ValueSerializer
 {

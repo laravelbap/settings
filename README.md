@@ -1,13 +1,10 @@
-**Package is looking for maintainers Please contact me if interested.**
 
 # Persistent Settings for Laravel 5
-
-[![Build Status](https://travis-ci.org/edvinaskrucas/settings.png?branch=master)](https://travis-ci.org/edvinaskrucas/settings)
-
+Forked from https://github.com/edvinaskrucas/settings
+updated to Laravel 7
 ---
 
-Persistent settings package for Laravel 5.
-
+Persistent settings package for Laravel 7.
 ---
 
 * Driver support
@@ -27,7 +24,7 @@ Require this package in your composer.json:
 
 ```
 "require": {
-  "edvinaskrucas/settings": "2.0.0"
+  "laravelbap/settings": "3.0.0"
 }
 ```
 
@@ -35,8 +32,7 @@ Require this package in your composer.json:
 
 | Laravel Version       | Package version          |
 | --------------------- | ------------------------ |
-| >=5.0, <=5.1          | >= 1.0.0, <= 2.0.0       |
-| 5.2                   | >= 2.0.0                 |
+| 7                     | = 3.0.0                  |
 
 ### Registering to use it with laravel
 
@@ -45,19 +41,19 @@ Add following lines to ```app/config/app.php```
 ServiceProvider array
 
 ```php
-Krucas\Settings\Providers\SettingsServiceProvider::class,
+Laravelbap\Settings\Providers\SettingsServiceProvider::class,
 ```
 
 Alias array
 ```php
-'Settings' => Krucas\Settings\Facades\Settings::class
+'Settings' => Laravelbap\Settings\Facades\Settings::class
 ```
 
 ### Publishing config file
 
 If you want to edit default config file, just publish it to your app folder.
 
-    php artisan vendor:publish --provider="Krucas\Settings\Providers\SettingsServiceProvider" --tag="config"
+    php artisan vendor:publish --provider="Laravelbap\Settings\Providers\SettingsServiceProvider" --tag="config"
 
 ## Usage
 
