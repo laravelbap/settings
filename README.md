@@ -1,10 +1,10 @@
 
 # Persistent Settings for Laravel 5
 Forked from https://github.com/edvinaskrucas/settings
-updated to Laravel 7
+Updated to Laravel 8
 ---
 
-Persistent settings package for Laravel 7.
+Persistent settings package for Laravel 8.
 ---
 
 * Driver support
