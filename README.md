@@ -33,6 +33,7 @@ Require this package in your composer.json:
 | Laravel Version       | Package version          |
 | --------------------- | ------------------------ |
 | 7                     | = 3.0.0                  |
+| 8                     | = 4.0.0                  |
 
 ### Registering to use it with laravel
 
